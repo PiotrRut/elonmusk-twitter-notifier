@@ -16,4 +16,4 @@ me a text message instead of an e-mail, however the current solution is the
 most cost effective one and sufficient for now.
 
 ---
-> _may the stonks be with you_
+_may the stonks be ever in your favour_
