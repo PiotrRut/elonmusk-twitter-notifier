@@ -1,16 +1,18 @@
 import tweepy
 import time
 from apiconfig import startup
+from emailsender import send_mail
 
 
 class MyStreamListener(tweepy.StreamListener):
     def on_status(self, status):
         if any(tweet in status.text for tweet in ['stock', 'share', '$', 'doge']):
-            print('ELON MUSK TWEETED:', status.text)
-            print('AT', time.ctime(), '\n')
+            # send e-mail
+            send_mail(f"Elon tweeted: {status.text}")
 
 
 def main():
+    # connect to the Twitter API
     api = startup()
     elon_tweet_listener = tweepy.Stream(auth=api.auth, listener=MyStreamListener())
     # '44196397' is the ID for the @elonmusk account
