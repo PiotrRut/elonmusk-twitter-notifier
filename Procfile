@@ -1,1 +1,1 @@
-web: python scanner.py
+worker: python scanner.py
