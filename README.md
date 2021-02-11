@@ -32,7 +32,7 @@ mail_from = os.getenv('EMAIL_FROM')
 mail_to = os.getenv('EMAIL_TO')
 mail_pw = os.getenv('EMAIL_PW')
 ```
-**You might also have to update the SMTP server and port if you're not using Gmail.**
+You might also have to update the SMTP server and port if you're not using Gmail.
 
 ## Upcoming features
 
