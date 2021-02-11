@@ -1,5 +1,4 @@
 import tweepy
-import time
 from apiconfig import startup
 from emailsender import send_mail
 
