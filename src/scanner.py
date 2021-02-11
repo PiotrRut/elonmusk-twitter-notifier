@@ -5,7 +5,8 @@ from emailsender import send_mail
 
 class MyStreamListener(tweepy.StreamListener):
     def on_status(self, status):
-        keywords = ['stock', 'Stock', 'share', 'Share', '$', 'doge', 'Doge']
+        keywords = ['stock', 'Stock', 'share', 'Share', '$',
+                    'doge', 'Doge', 'crypto', 'Crypto', 'bitcoin', 'Bitcoin']
         # this solution will exclude replies and mentions and only return Elon's tweets
         if any(tweet in status.text for tweet in keywords) and status.user.id_str == '44196397':
             # send e-mail
