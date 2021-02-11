@@ -6,6 +6,7 @@ mail_from = os.getenv('EMAIL_FROM')
 mail_to = os.getenv('EMAIL_TO')
 mail_pw = os.getenv('EMAIL_PW')
 
+
 # Sending an e-mail to myself whenever a tweet that meets the criteria is detected
 def send_mail(text):
     msg = MIMEText(text)
