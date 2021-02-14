@@ -1,6 +1,7 @@
 import tweepy
 from apiconfig import startup
 from emailsender import send_mail
+import time
 
 
 class MyStreamListener(tweepy.StreamListener):
@@ -9,7 +10,7 @@ class MyStreamListener(tweepy.StreamListener):
         # this solution will exclude replies and mentions and only return Elon's tweets
         if any(tweet in status.text.lower() for tweet in keywords) and status.user.id_str == '44196397':
             # send e-mail
-            send_mail(f"Elon tweeted: {status.text}")
+            send_mail(f"Elon tweeted: {status.text} - on {time.ctime()}")
 
 
 def main():
