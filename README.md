@@ -1,13 +1,35 @@
 # Stonks Twitter Scanner 📈
 
-This little scripts uses the `tweepy` Python library, which is a wrapper around the Twitter API.
-It sets up a listener on the [@elonmusk](https://twitter.com/elonmusk) Twitter account, and automatically detects whenever Elon Musk posts a tweet mentioning the keywords `share`, `stock`, `doge`, and `$`, or any words
-that contain any of those strings as substrings.
+<img src="https://img.shields.io/badge/python-3.6%20%7C%203.7%20%7C%203.8-blue" />
 
-When a new tweet that meets the conditions is read, this program will automatically e-mail me with the transcript of that tweet. This is a way for me
+This little scripts uses the [tweepy](https://www.tweepy.org/) Python library, which is a wrapper around the Twitter API.
+It sets up a listener on the [@elonmusk](https://twitter.com/elonmusk) Twitter account, and automatically detects whenever Elon Musk posts a tweet mentioning the any of the specified keywords
+(or any words containing those as substrings). 
+
+It also uses AI object detection from images using a [YOLO](https://pjreddie.com/darknet/yolo/) based model that I've custom-trained to detect
+objects such as dogecoins, bitcoins, doge etc.. in the images.
+
+When a new tweet that meets the conditions is read, this program will automatically e-mail me with the transcript of that tweet. For tweets containing an image that the AI
+classifies as ones containing objects it's trained to detect, the image will be attached as well. This is a way for me
 to always be up to date with stocks that may soon rise in value 🤡
 
 It is hosted on a Heroku dyno and is set to never sleep in order to provide as accurate service as possible.
+
+## Prerequisites 🗂
+
+In order to run this locally, make sure you're Python interpreter is between v3.6 and 3.8 - 
+this is due to the fact that `tensorflow` won't work with newer versions. If you're on a newer
+Python version, consider downgrading with [pyenv](https://github.com/pyenv/pyenv).
+
+To install all the necessary dependencies, simply run the following command inside project root 👇🏻
+
+```bash
+$ pip install -r requirements.txt
+```
+
+Note:
+I have *not* included my trained AI model in the repository as the file size is too big - you can get it by navigating to the releases tab, downloading `doge-ai.h5` and placing it in the root
+of the project.
 
 ## Usage and config 👨🏻‍💻
 
@@ -38,21 +60,20 @@ You might also have to update the SMTP server and port if you're not using Gmail
 ## Deployment 🚀
 
 Unless you want to keep this program running inside an open terminal instance forever, you should think about
-deploying it somewhere. To do this, first find a platform that suits your needs - I am personally using
-[Heroku](https://heroku.com), but other alternatives include AWS (EC2 is a good option for this kind of applications),
-or DigitalOcean. 
+deploying it somewhere. To do this, first find a platform that suits your needs, such as Heroku, Amazon AWS or MS Azure.
 
 You need to remember to set the same config vars on the server as you've done locally, otherwise
-the program won't work. You also need to make sure that you install all the necessary dependencies (tweepy) - on Heroku this is done
-by specifying them inside the `requirements.txt` file which Heroku reads with every deployment.
+the program won't work. You also need to make sure that you install all the necessary dependencies (tweepy) - for most platforms this is done
+by specifying them inside the `requirements.txt` file, but some services might need more. You will also have to make sure that your platform does not use Python above v3.8!
 
 Some platforms also charge differently and offer different types of containers, so make sure you find one that suits your needs and dones't cost much.
 
-## Upcoming features 📆
+### Dealing with bundle size 📦
+One thing to keep in mind is that because of the large size of the AI model, as well as the size of the tensorflow install, the overall bundle size gets quite big quite quickly. Some platforms
+(particularly Heroku) limit the bundle size you can deploy (for Heroku it's 500mb), and thus deployment
+can become troublesome.
 
-In the feature I (hopefully) would like to integrate this with Amazon SNS which would send
-me a text message instead of an e-mail, however the current solution is the
-most cost effective one and sufficient for now.
+This has forced me to start using AWS's containers as well as S3 storage (they offer a very generous free tier), however there are plenty of other options, including self-hosting!
 
 ---
 _may the stonks be ever in your favour_
