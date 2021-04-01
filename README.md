@@ -26,7 +26,8 @@ $ pip install -r requirements.txt
 ```
 
 Note:
-I have *not* included my trained AI model in the repository as the file size is too big - you can get it by navigating to the releases tab, downloading `doge-ai.h5` and placing it in the root
+I have *not* included my trained AI model in the repository due to the large file size - 
+you can get it by navigating to the [releases](https://github.com/PiotrRut/elonmusk-twitter-notifier/releases) tab, downloading `doge-ai.h5` and placing it in the root
 of the project.
 
 ## Usage and config 👨🏻‍💻
@@ -68,8 +69,7 @@ Some platforms also charge differently and offer different types of containers, 
 
 ### Dealing with bundle size 📦
 One thing to keep in mind is that because of the large size of the AI model, as well as the size of the tensorflow install, the overall bundle size gets quite big quite quickly. Some platforms
-(particularly Heroku) limit the bundle size you can deploy (for Heroku it's 500mb), and thus deployment
-can become troublesome.
+(particularly Heroku) limit the bundle size you can deploy (for Heroku it's 500mb), and thus deployment can become troublesome.
 
 This has forced me to start using AWS's containers as well as S3 storage (they offer a very generous free tier), however there are plenty of other options, including self-hosting!
 
