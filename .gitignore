@@ -139,5 +139,6 @@ dmypy.json
 # Cython debug symbols
 cython_debug/
 
-.h5
-.jpg
+# Project specific
+*.h5
+*.jpg
