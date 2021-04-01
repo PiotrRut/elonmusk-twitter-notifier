@@ -13,8 +13,6 @@ When a new tweet that meets the conditions is read, this program will automatica
 classifies as ones containing objects it's trained to detect, the image will be attached as well. This is a way for me
 to always be up to date with stocks that may soon rise in value 🤡
 
-It is hosted on a Heroku dyno and is set to never sleep in order to provide as accurate service as possible.
-
 ## Prerequisites 🗂
 
 In order to run this locally, make sure you're Python interpreter is between v3.6 and 3.8 - 
