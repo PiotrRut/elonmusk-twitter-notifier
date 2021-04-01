@@ -16,7 +16,7 @@ to always be up to date with stocks that may soon rise in value 🤡
 ## Prerequisites 🗂
 
 In order to run this locally, make sure you're Python interpreter is between v3.6 and 3.8 - 
-this is due to the fact that `tensorflow` won't work with newer versions. If you're on a newer
+this is due to the fact that Tensorflow won't work with newer versions. If you're on a newer
 Python version, consider downgrading with [pyenv](https://github.com/pyenv/pyenv).
 
 To install all the necessary dependencies, simply run the following command inside project root 👇🏻
@@ -72,6 +72,20 @@ One thing to keep in mind is that because of the large size of the AI model, as 
 (particularly Heroku) limit the bundle size you can deploy (for Heroku it's 500mb), and thus deployment can become troublesome.
 
 This has forced me to start using AWS's containers as well as S3 storage (they offer a very generous free tier), however there are plenty of other options, including self-hosting!
+
+## Preview 📲
+
+<details>
+  <summary><i><b>Reveal screenshots</b></i></summary>
+  <p>
+
+| Notification | Image attachment |
+| ----------- | ----------- |
+| ![image](https://user-images.githubusercontent.com/43642399/113286944-c62d7a00-92e4-11eb-9a78-1f64b43f13df.png) | ![image](https://user-images.githubusercontent.com/43642399/113286990-d9404a00-92e4-11eb-9dd9-be259d80ef7b.png) |
+
+  </p>
+</details>
+
 
 ---
 _may the stonks be ever in your favour_
