@@ -71,8 +71,6 @@ Some platforms also charge differently and offer different types of containers, 
 One thing to keep in mind is that because of the large size of the AI model, as well as the size of the tensorflow install, the overall bundle size gets quite big quite quickly. Some platforms
 (particularly Heroku) limit the bundle size you can deploy (for Heroku it's 500mb), and thus deployment can become troublesome.
 
-This has forced me to start using AWS's containers as well as S3 storage (they offer a very generous free tier), however there are plenty of other options, including self-hosting!
-
 ## Preview 📲
 
 <details>
