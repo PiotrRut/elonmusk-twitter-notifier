@@ -65,7 +65,7 @@ You need to remember to set the same config vars on the server as you've done lo
 the program won't work. You also need to make sure that you install all the necessary dependencies (tweepy) - for most platforms this is done
 by specifying them inside the `requirements.txt` file, but some services might need more. You will also have to make sure that your platform does not use Python above v3.8!
 
-Some platforms also charge differently and offer different types of containers, so make sure you find one that suits your needs and dones't cost much.
+Some platforms also charge differently and offer different types of containers, so make sure you find one that suits your needs and doesn't cost much.
 
 ### Dealing with bundle size 📦
 One thing to keep in mind is that because of the large size of the AI model, as well as the size of the tensorflow install, the overall bundle size gets quite big quite quickly. Some platforms
